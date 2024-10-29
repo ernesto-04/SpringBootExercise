@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "services.listings.url",
+      "type": "java.lang.String",
+      "description": "A description for 'services.listing-service.url'"
+    },
+    {
+      "name": "services.users.url",
+      "type": "java.lang.String",
+      "description": "A description for 'services.userservice.url'"
+    }
+  ]
+}
