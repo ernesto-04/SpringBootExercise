@@ -7,6 +7,7 @@ import com.exercise.userservice.service.UserService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,9 +19,15 @@ public class UserController {
     private UserService userService;
 
     // POST /users
-    @PostMapping(value = "/users", consumes = "application/json")
-    public CreateUserResponseDto createUser(@Valid @RequestBody CreateUserRequestDto requestDto) {
-        return userService.createUser(requestDto);
+    @PostMapping(value = "/users", consumes = "application/x-www-form-urlencoded")
+    public ResponseEntity<CreateUserResponseDto> createUser(
+            @RequestParam String name) {
+        
+        CreateUserRequestDto requestDto = new CreateUserRequestDto();
+        requestDto.setName(name);
+        
+        CreateUserResponseDto responseDto = userService.createUser(requestDto);
+        return ResponseEntity.ok(responseDto);
     }
 
     // GET /users
