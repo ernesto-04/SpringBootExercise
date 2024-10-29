@@ -1,12 +1,5 @@
-# Backend Tech Challenge
-An exercise to assess your skills with java, backend development and microservices architecture.
-
 ## Introduction
 We're building a system that stores information about users and properties that are available to rent or buy. The system is designed as a set of small web applications that each perform a specific task (otherwise known as "microservices").
-
-Please read [the Wikipedia article about microservices](https://en.wikipedia.org/wiki/Microservices) if you are not familar with the architecture before.
-
-Some parts of the system have been built already. We need to your help to complete the rest!
 
 ### Architecture
 This system comprises of 3 independent web applications:
@@ -244,14 +237,10 @@ Response:
 }
 ```
 
-## Requirements
-The listing service has been built already. You need to build the remaining two components: the user service and the public API layer. The implementation of the listing service can serve as a good starting point to learn more about how to structure a web application using the java spring boot.
-
-The first priority would be to get a working system up and running! A great submission would demonstrate a grasp of the principles of microservice architecture.
 
 ## Setup
 This example uses spring boot 3.1.5 and Java 17. To run this project, it is recommended to run this on IntelliJ or Eclipse for easier setup.
-However, if you prefer manual execution, you can also use the following command:
+For manual execution, use the following command:
 ```bash
 ./gradlew bootrun
 ```
@@ -259,7 +248,6 @@ However, if you prefer manual execution, you can also use the following command:
 In case you have a different Java version installed, and installing this particular version might disrupt your current setup, consider using https://sdkman.io/ or other package manager for a more convenient switch.
 
 ### Create listings
-Time to add some data into the listing service!
 
 ```bash
 curl localhost:8081/listings -XPOST \
